@@ -1,0 +1,53 @@
+version: "3"
+
+networks:
+  tasking-network:
+    driver: bridge
+
+volumes:
+  mongodb:
+  redisdb:
+
+services:
+  tasking-redis:
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    volumes:
+      - redisdb:/data/redisdb
+    networks:
+      - tasking-network
+
+  tasking-api:
+    ports:
+      - 4646:4646
+      - 4406:9330
+    volumes:
+      - ../tasking-api:/app
+      - /app/node_modules
+    build:
+      context: ../tasking-api
+      dockerfile: ../tasking-api/Dockerfile
+    networks:
+      - tasking-network
+    restart: unless-stopped
+
+
+  tasking-client:
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../tasking-client:/app
+      - /app/node_modules
+    build:
+      context: ../tasking-client
+      dockerfile: ../tasking-client/Dockerfile
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - tasking-network
+    restart: unless-stopped
+
