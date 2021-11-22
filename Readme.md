@@ -1,6 +1,8 @@
 # Tasking compose
 
 ## Required Repositories
+- [tasking-api](https://github.com/NicolasLercari/tasking-api)
+- [tasking-client](https://github.com/NicolasLercari/tasking-client)
 
 ## Run 
 
