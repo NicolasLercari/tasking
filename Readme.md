@@ -6,7 +6,7 @@
 
 ## Run 
 
-Clone repose:
+Clone repositories:
 ```
    mkdir tasking && cd tasking
    git clone git@github.com:NicolasLercari/tasking-compose.git
