@@ -19,3 +19,7 @@ Run:
     cd tasking-compose
     docker-compose up        
 ```
+
+By default projects run on:
+- tasking-api run on http://localhost:4646/
+- tasking-clien run on http://localhost:3000/ 
