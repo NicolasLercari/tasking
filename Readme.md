@@ -9,7 +9,7 @@
 Clone repose:
 ```
    mkdir tasking && cd tasking
-   git clone tasking-compose
+   git clone git@github.com:NicolasLercari/tasking-compose.git
    git clone git@github.com:NicolasLercari/tasking-api.git
    git clone git@github.com:NicolasLercari/tasking-client.git
 ```
