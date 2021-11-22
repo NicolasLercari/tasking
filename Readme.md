@@ -11,7 +11,7 @@ Clone repose:
    mkdir tasking && cd tasking
    git clone tasking-compose
    git clone git@github.com:NicolasLercari/tasking-api.git
-   git clone tasking-client 
+   git clone git@github.com:NicolasLercari/tasking-client.git
 ```
 
 Run: 
